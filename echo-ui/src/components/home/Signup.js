@@ -56,7 +56,7 @@ function Signup() {
       if (error.response?.data) {
         const { message, errors, status } = error.response.data;
         if (status === 409) {
-          errorMsg = message;
+          errorMsg = message ? message  : 'You have alrady this account';
         } else if (errors?.length > 0) {
           errorMsg = errors[0].defaultMessage;
         }
